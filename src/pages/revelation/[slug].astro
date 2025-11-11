@@ -32,7 +32,7 @@ const date = new Date(post.timestamp * 1000).toLocaleDateString('ru-RU');
       <h1 class="text-2xl font-bold text-gray-900 mb-2">{post.title}</h1>
       <time datetime={post.timestamp.toString()} class="text-gray-500">{date}</time>
     </header>
-    {post.media && <img src={post.media} alt={post.title} class="my-4 rounded-lg w-full" />}
+    {post.media && <img src={post.media} alt={post.title} loading="lazy" class="my-4 rounded-lg w-full" loading="lazy" />}
     <div set:html={post.text.replace(/\n/g, '<br>')} />
   </article>
  <a href="/revelation" class="block mt-6 text-blue-500 hover:underline"> ← К списку Откровения </a>

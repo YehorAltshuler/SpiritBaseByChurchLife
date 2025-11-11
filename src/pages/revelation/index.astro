@@ -22,7 +22,9 @@ const posts: Post[] = rawPosts as Post[]; // Type assertion to match Post[] (JSO
               <img 
                 src={post.media} 
                 alt={post.title} 
-                class="mt-2 w-full h-32 md:h-48 lg:h-56 object-contain rounded" 
+                class="mt-2 w-full h-32 md:h-48 lg:h-56 object-contain rounded"
+                loading="lazy"
+                decoding="async" 
               />
             )}
           </a>
