@@ -5,12 +5,12 @@ const isInactive = status === 'В разработке';
 
 <a
   href={href}
-  class={`rounded-xl p-6 text-center border border-border bg-(--color-surface- dark) dark:bg-(--color-surface-light) transition-all duration-200 ${
+  class={`rounded-xl p-8 text-center border border-border bg-(--color-surface- dark) dark:bg-(--color-surface-light) transition-all duration-200 ${
     isInactive
       ? 'opacity-40 cursor-not-allowed pointer-events-none'
       : 'hover:shadow-md hover:-translate-y-0.5'
   }`}
 >
-  <h3 class="text-lg font-medium mb-1">{title}</h3>
+  <h3 class="text-xl font-medium mb-2">{title}</h3>
   <p class="text-sm text-text-secondary dark:text-text-secondary">{status}</p>
 </a>

@@ -5,16 +5,15 @@ import CategoryCard from '../components/CategoryCard.astro';
 ---
 
 <Layout title="SpiritBase — Духовная база знаний">
-  <section class="text-center mt-12">
-    <h1 class="text-4xl font-medium mb-4">SpiritBase</h1>
-    <p class="text-lg text-text-secondary max-w-2xl mx-auto">
-      База знаний, посвящённая духовному наследию Игоря Гриненко.
+  <section class="text-center mt-8">
+    <h1 class="text-5xl font-medium">SpiritBase</h1>
+    <p class="text-lg text-text-secondary max-w-4xl mx-auto leading-relaxed mt-1 mb-16">
+      База знаний, посвящённая духовному наследию доктора богословия Игоря Гриненко.
     </p>
   </section>
+  <Search/>
 
-  <Search class="mt-10" />
-
-  <section class="mt-12 flex flex-wrap justify-center gap-6">
+  <section class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
     <CategoryCard title="Читая книгу Откровение" status="Уже доступно" href="/revelation" />
     <CategoryCard title="Наш путь в Горы Блаженства" status="Уже доступно" href="/ourway" />
     <CategoryCard title="Проповеди" status="В разработке" href="#" />
