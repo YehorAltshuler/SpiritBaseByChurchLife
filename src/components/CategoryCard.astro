@@ -1,0 +1,21 @@
+---
+const { title, status, href } = Astro.props;
+const isInactive = status === 'В разработке';
+---
+
+<a 
+  href={href} 
+  class={`bg-white rounded-lg shadow-md p-6 text-center flex-1 max-w-sm mx-2 transition-shadow ${
+    isInactive 
+      ? 'opacity-50 cursor-not-allowed pointer-events-none' 
+      : 'group hover:shadow-lg'
+  }`}
+>
+  <h3 class="text-xl font-semibold mb-2">{title}</h3>
+  <p class="text-gray-500 text-sm">{status}</p>
+  <div class={`mt-4 transition-opacity ${isInactive ? 'opacity-0' : 'opacity-0 group-hover:opacity-100'}`}>
+    <svg class="w-5 h-5 mx-auto text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+    </svg>
+  </div>
+</a>

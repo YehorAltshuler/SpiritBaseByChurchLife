@@ -1,0 +1,31 @@
+---
+import { ClientRouter } from 'astro:transitions';
+import '../styles/global.css';  
+
+const { title } = Astro.props;
+---
+
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content="SpiritBase — база знаний по духовному наследию." />
+    <title>{title}</title>
+    <ClientRouter />
+  </head>
+  <body class="bg-gray-50 text-gray-900">
+    <header class="bg-white shadow-sm">
+      <nav class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+        <a href="/" class="text-2xl font-bold text-blue-600">SpiritBase</a>
+        <a href="/about" class="text-sm text-blue-600 hover:underline">Что это такое?</a>
+      </nav>
+    </header>
+    <main class="max-w-7xl mx-auto px-4 py-8">
+      <slot />
+    </main>
+  </body>
+</html>
+<style>
+  /* Базовые стили, если нужно */
+</style>

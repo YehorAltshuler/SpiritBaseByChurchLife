@@ -1,0 +1,24 @@
+<link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+<script src="/pagefind/pagefind-ui.js" is:inline></script>
+<div id="search"></div>
+<script>
+  let pagefindInstance: { destroy: () => void; } | null = null;
+
+  document.addEventListener('astro:page-load', () => {
+    // Уничтожаем предыдущий экземпляр, если он существует
+    if (pagefindInstance) {
+      pagefindInstance.destroy();
+      pagefindInstance = null;
+    }
+
+    // Инициализируем новый, если элемент существует
+    const searchElement = document.querySelector('#search');
+    if (searchElement) {
+        // @ts-ignores
+      pagefindInstance = new PagefindUI({ 
+        element: '#search', 
+        showSubResults: true 
+      });
+    }
+  });
+</script>
