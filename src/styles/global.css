@@ -1,1 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
 @import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", system-ui, sans-serif;
+
+  /* Светлая тема */
+  --color-bg: #ffffff;
+  --color-surface: #f8f8f8;
+  --color-text: #111111;
+  --color-text-secondary: #555555;
+  --color-border: #e5e5e5;
+  --color-accent: #000000;
+
+  /* Тёмная тема */
+  --color-bg-dark: #000000;
+  --color-surface-dark: #111111;
+  --color-text-dark: #f8f8f8;
+  --color-text-secondary-dark: #aaaaaa;
+  --color-border-dark: #222222;
+  --color-accent-dark: #ffffff;
+}
+
+@layer base {
+  html {
+    font-family: var(--font-sans);
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  html.dark {
+    background-color: var(--color-bg-dark);
+    color: var(--color-text-dark);
+  }
+
+  h1, h2, h3, h4 {
+    font-weight: 600;
+  }
+
+  a {
+    color: var(--color-accent);
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+  }
+
+  a:hover {
+    opacity: 0.7;
+  }
+
+  p, li {
+    color: var(--color-text-secondary);
+    line-height: 1.7;
+  }
+
+  html.dark p,
+  html.dark li {
+    color: var(--color-text-secondary-dark);
+  }
+
+  ::selection {
+    background-color: var(--color-text);
+    color: var(--color-bg);
+  }
+
+  html.dark ::selection {
+    background-color: var(--color-text-dark);
+    color: var(--color-bg-dark);
+  }
+}

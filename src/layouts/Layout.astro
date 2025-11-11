@@ -1,7 +1,6 @@
 ---
 import { ClientRouter } from 'astro:transitions';
-import '../styles/global.css';  
-
+import '../styles/global.css';
 const { title } = Astro.props;
 ---
 
@@ -14,18 +13,23 @@ const { title } = Astro.props;
     <title>{title}</title>
     <ClientRouter />
   </head>
-  <body class="bg-gray-50 text-gray-900">
-    <header class="bg-white shadow-sm">
-      <nav class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
-        <a href="/" class="text-2xl font-bold text-blue-600">SpiritBase</a>
-        <a href="/about" class="text-sm text-blue-600 hover:underline">Что это такое?</a>
+
+  <body class="min-h-screen flex flex-col transition-colors duration-300">
+    <header class="backdrop-blur bg-surface/80 dark:bg-surface/80 border-b border-border dark:border-border-dark sticky top-0 z-50">
+      <nav class="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
+        <a href="/" class="font-serif text-2xl text-accent">SpiritBase</a>
+        <div class="flex items-center gap-4">
+          <a href="/about" class="text-sm text-accent hover:underline">О проекте</a>
+        </div>
       </nav>
     </header>
-    <main class="max-w-7xl mx-auto px-4 py-8">
+
+    <main class="grow max-w-5xl mx-auto px-6 py-12">
       <slot />
     </main>
+
+    <footer class="text-center py-6 text-sm text-text-secondary dark:text-text-secondary">
+      by ChurchLife Development
+    </footer>
   </body>
 </html>
-<style>
-  /* Базовые стили, если нужно */
-</style>
