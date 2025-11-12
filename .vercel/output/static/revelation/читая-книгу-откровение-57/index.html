@@ -1,0 +1,44 @@
+<!DOCTYPE html><html lang="ru"> <head><meta charset="utf-8"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta name="viewport" content="width=device-width"><meta name="description" content="SpiritBase — база знаний по духовному наследию."><title>Читая книгу Откровение (57) — SpiritBase</title><meta name="astro-view-transitions-enabled" content="true"><meta name="astro-view-transitions-fallback" content="animate"><script type="module" src="/_astro/ClientRouter.astro_astro_type_script_index_0_lang.elfUsALL.js"></script><link rel="stylesheet" href="/_astro/index.CGVC5zg3.css"></head> <body class="min-h-screen flex flex-col transition-colors duration-300"> <!-- ===== HEADER ===== --> <header class="backdrop-blur bg-surface/80 dark:bg-surface/80 border-b border-border dark:border-border-dark sticky top-0 z-50"> <nav class="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center"> <a href="/" class="font-serif text-2xl text-accent hover:opacity-80 transition-opacity">
+SpiritBase
+</a> <div class="flex items-center gap-4"> <a href="/about" class="inline-block text-sm font-medium px-4 py-2 rounded-lg border border-border bg-(--color-text) text-white hover:opacity-80 transition-opacity">
+О проекте
+</a> <!-- КНОПКА "СООБЩИТЬ ОБ ОШИБКЕ" — идеальная версия --> <button id="report-error" type="button" class="inline-block text-sm font-medium px-4 py-2 rounded-lg border border-border text-(--color-text) hover:bg-(--color-text)/10 transition-colors cursor-pointer focus:outline-none focus:ring-2 focus:ring-accent/50">
+Сообщить об ошибке
+</button> </div> </nav> </header> <!-- ===== MAIN CONTENT ===== --> <main class="grow max-w-5xl mx-auto px-6 py-12">  <header class="mb-8 text-center"> <h1 class="text-3xl font-medium mb-2">Читая книгу Откровение (57)</h1> <time class="text-sm text-text-secondary">05.01.2017</time> </header> <img src="/media/Fotoizhroniki_1500168346918766/1818196231782641.jpg" alt="Читая книгу Откровение (57)" class="my-6 w-full rounded-lg" loading="lazy"><div class="leading-relaxed text-text-secondary dark:text-text-secondary">Рубрика: «Читая Книгу Откровение»<br><br>(57) ὁ ἀγαπῶντος ἡμᾶς – Любящий нас<br><br>Прочитаем часть  Откр. 1:5 : «…Ему, возлюбившему нас...» Обратим внимание на причастие «возлюбившему». В койнэ оно написано не в Прошедшем, а в Настоящем времени с артиклем:  τῷ ἀγαπῶντι, т.е. «Любящему». Поэтому ὁ ἀγαπῶντος - еще одно Имя Иисуса Христа; оно указывает на продолжительное, непрерывное и постоянное проявление любви с Его стороны  по отношению к Иоанну и другим христианам («нас»). В Новом Завете причастие с основой ἀγαπῶν использовано 16 раз. В основном, оно описывает взаимоотношения между близкими людьми: мужа к жене (Еф. 5:8), между братьями (1Ин. 2:10; 3:10, 14; 4:20), к другим людям (Мтф. 5:46; 6:32; 1Ин. 4:7, 8; Рим. 13:8; 2Кор. 12:5). Также оно используется для выражения любви к Богу (1Ин. 4:21; 5:1; Еф. 6:1), отвержения Иисуса Христа (Ин. 14:24) и постоянной любви со стороны Отца Небесного (Ин. 14:21).<br>В Книге Откровение Имя Иисуса Христа  ὁ ἀγαπῶντος  отражает излияние любви со стороны Господа на всех христиан, которые остаются Ему верными и преданными.</div> <a href="/revelation" class="inline-block px-6 py-3 rounded-lg font-medium transition bg-[var(--color-text)] text-white hover:opacity-80 mt-12 text-center block"> 
+← Назад к списку
+ </a>  </main> <!-- ===== FOOTER ===== --> <footer class="text-center py-6 text-sm text-text-secondary dark:text-text-secondary">
+by ChurchLife Development
+</footer> <!-- ===== СКРИПТ: надёжная кнопка без багов ===== --> <script>
+      const setupReportButton = () => {
+        const btn = document.getElementById("report-error");
+        if (!btn) return;
+
+        // Клонируем элемент — сбрасываем все старые обработчики и состояния
+        const newBtn = btn.cloneNode(true);
+        btn.replaceWith(newBtn);
+
+        // Обработчик клика
+        newBtn.addEventListener("click", () => {
+          // Сбрасываем визуальное "зажатие" и фокус
+          newBtn.blur();
+          document.activeElement?.blur();
+
+          // Формируем письмо
+          const subject = "Ошибка в SpiritBase";
+          const body = `Опишите ошибку ниже:\n\n(Страница: ${window.location.href})`;
+          const mailto = `mailto:churchlife.development+spiritbase@gmail.com` +
+                        `?subject=${encodeURIComponent(subject)}` +
+                        `&body=${encodeURIComponent(body)}`;
+
+          // Открываем в новой вкладке — 100% без залипания
+          window.open(mailto, "_blank", "noopener,noreferrer");
+        });
+      };
+
+      // Выполняем при первой загрузке
+      setupReportButton();
+
+      // И при каждой навигации через Astro View Transitions
+      document.addEventListener("astro:page-load", setupReportButton);
+      document.addEventListener("astro:after-swap", setupReportButton);
+    </script> </body> </html>

@@ -1,52 +1,10 @@
 ---
-import Layout from '../../layouts/Layout.astro';
-import type { Post } from '../../types';
-import rawPosts from '../../data/our_way_posts.json' assert { type: 'json' };
-const posts: Post[] = rawPosts as Post[];
+import PostList from '../../components/PostList.astro';
+import posts from '../../data/our_way_posts.json' assert { type: 'json' };
 ---
 
-<Layout title="Наш путь в Горы Блаженства — SpiritBase">
-  <section class="max-w-4xl mx-auto">
-    <h1 class="text-4xl font-semibold mb-8">Наш путь в Горы Блаженства</h1>
-
-    <ul class="space-y-6">
-      {posts.map((post) => {
-        const slug = post.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
-        const date = new Date(post.timestamp * 1000).toLocaleDateString('ru-RU');
-        return (
-          <li class="border border-border bg-(--color-surface) dark:bg-(--color-surface) rounded-xl p-6 transition hover:shadow-sm">
-            <a href={`/ourway/${slug}`} class="block">
-              <h2 class="text-xl font-medium mb-2">{post.title}</h2>
-              <p class="text-text-secondary mb-3 line-clamp-3">{post.text.substring(0, 180)}...</p>
-              <time class="text-sm text-text-secondary">{date}</time>
-              {post.media && (
-                <img
-                  src={post.media}
-                  alt={post.title}
-                  class="mt-4 w-full h-48 object-contain rounded-lg"
-                  loading="lazy"
-                />
-              )}
-            </a>
-          </li>
-        );
-      })}
-    </ul>
-
-    <a
-      href="/"
-      class="inline-block mt-10 border border-border px-6 py-3 rounded-lg hover:bg-(--color-surface) dark:hover:bg-(--color-surface-dark) transition"
-    >
-      ← На главную
-    </a>
-  </section>
-
-  <style>
-    .line-clamp-3 {
-      display: -webkit-box;
-      -webkit-line-clamp: 3;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
-    }
-  </style>
-</Layout>
+<PostList
+  title="Наш путь в Горы Блаженства"
+  posts={posts}
+  basePath="ourway"
+/>

@@ -1,41 +1,18 @@
 ---
-import Layout from '../../layouts/Layout.astro';
+import { slugify } from '../../utils/slugify';
+import PostPage from '../../components/PostPage.astro';
+import posts from '../../data/revelation_posts.json' assert { type: 'json' };
 import type { Post } from '../../types';
 
 export async function getStaticPaths() {
-  const { default: rawPosts } = await import('../../data/revelation_posts.json');
-  const posts: Post[] = rawPosts as Post[];
-
-  return posts.map((post) => {
-    const slug = post.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
-    return { params: { slug }, props: { post } };
-  });
+  return (posts as Post[]).map((post) => ({
+    params: { slug: slugify(post.title) },
+    props: { post },
+  }));
 }
 
 const { post } = Astro.props;
 if (!post) return Astro.redirect('/404');
-const date = new Date(post.timestamp * 1000).toLocaleDateString('ru-RU');
 ---
 
-<Layout title={`${post.title} — SpiritBase`}>
- <header class="mb-8 text-center">
-      <h1 class="text-3xl font-medium mb-2">{post.title}</h1>
-      <time class="text-sm text-text-secondary">{date}</time>
-    </header>
-
-    {post.media && (
-      <img src={post.media} alt={post.title} class="my-6 w-full rounded-lg" loading="lazy" />
-    )}
-
-    <div class="leading-relaxed text-text-secondary dark:text-text-secondary" set:html={post.text.replace(/\n/g, '<br>')} />
- 
-
-  <div class="text-center mt-12">
-     <a
-  href="/"
-  class="inline-block font-medium px-6 py-3 rounded-lg border border-border bg-(--color-text) text-white hover:opacity-80 transition-colors"
->
-  ← Вернуться на главную
-</a>
-  </div>
-</Layout>
+<PostPage post={post} backLink="/revelation"/>

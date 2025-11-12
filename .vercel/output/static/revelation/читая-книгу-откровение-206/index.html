@@ -1,0 +1,44 @@
+<!DOCTYPE html><html lang="ru"> <head><meta charset="utf-8"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta name="viewport" content="width=device-width"><meta name="description" content="SpiritBase — база знаний по духовному наследию."><title>Читая книгу Откровение (206) — SpiritBase</title><meta name="astro-view-transitions-enabled" content="true"><meta name="astro-view-transitions-fallback" content="animate"><script type="module" src="/_astro/ClientRouter.astro_astro_type_script_index_0_lang.elfUsALL.js"></script><link rel="stylesheet" href="/_astro/index.CGVC5zg3.css"></head> <body class="min-h-screen flex flex-col transition-colors duration-300"> <!-- ===== HEADER ===== --> <header class="backdrop-blur bg-surface/80 dark:bg-surface/80 border-b border-border dark:border-border-dark sticky top-0 z-50"> <nav class="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center"> <a href="/" class="font-serif text-2xl text-accent hover:opacity-80 transition-opacity">
+SpiritBase
+</a> <div class="flex items-center gap-4"> <a href="/about" class="inline-block text-sm font-medium px-4 py-2 rounded-lg border border-border bg-(--color-text) text-white hover:opacity-80 transition-opacity">
+О проекте
+</a> <!-- КНОПКА "СООБЩИТЬ ОБ ОШИБКЕ" — идеальная версия --> <button id="report-error" type="button" class="inline-block text-sm font-medium px-4 py-2 rounded-lg border border-border text-(--color-text) hover:bg-(--color-text)/10 transition-colors cursor-pointer focus:outline-none focus:ring-2 focus:ring-accent/50">
+Сообщить об ошибке
+</button> </div> </nav> </header> <!-- ===== MAIN CONTENT ===== --> <main class="grow max-w-5xl mx-auto px-6 py-12">  <header class="mb-8 text-center"> <h1 class="text-3xl font-medium mb-2">Читая книгу Откровение (206)</h1> <time class="text-sm text-text-secondary">12.10.2018</time> </header> <img src="/media/Fotoizhroniki_1500168346918766/2259639244305002.jpg" alt="Читая книгу Откровение (206)" class="my-6 w-full rounded-lg" loading="lazy"><div class="leading-relaxed text-text-secondary dark:text-text-secondary">Читая Книгу Откровение<br><br>(206) В «Семи Светильниках» сокрыта каждая христианская Экклэсия<br><br> Прочитаем еще раз Откр. 1:20 : «Тайна семи звезд, которые ты видел в деснице Моей, и семи золотых светильников [есть сия]: семь звезд суть Ангелы семи церквей; а семь светильников, которые ты видел, суть семь церквей.»<br><br>Обратим внимание, что раскрытая Иисусом Христом тайна касается не только «Семи Звезд» в Руке Господа, но и «Семи Светильников», которые напоминают люхниай в Скинии Собрания и Ииерусалимском Храме (205). И поэтому мы обозначили их светом Церкви, «… находящимся в Асии: в Ефес, и в Смирну, и в Пергам, и в Фиатиру, и в Сардис, и в Филадельфию, и в Лаодикию» (Откр. 1:11). И этот чисто человечески-исторический взгляд на «Тайну Семи Светильников» не позволяет нам причислить к указанным Малоазиатским Экклэсиям хотя-бы одну другую церковную общину (в том числе, из Малой Азии). Но, когда мы читаем о «семи  Светильниках-Церквах» с позиции веры в универсальную Богодухновенность Откр. 1:20, то тогда мы можем уверенно включить в число «Семи Светильников» все известные и неизвестные нам поместные церковные общины, признанные Иисусом Христом. Поэтому наш Господь не только «ходил» посреди Светильников-Экклэсий Малой Азии времени конца Первого столетия, заботясь о них, как их Первосвященник (Откр. 1:13), но такую же заботу Он проявлял и проявляет ко всем христианским церковным группам и общинам от дня Рождения Церкви до ее Восхищения в Небеса.<br><br>Итак, «Семь Светильников», которые увидел Иоанн, буквально представляли семь поместных Экклэсий в Эфеском регионе Малой Азии (которыми он управлял, как епископ, до своей ссылки). Однако Тайна «Семи Светильников-Церквей», возвещенная Господом, приобщает так же к числу «семи» все, без исключения, христианские Экклэсии, которыми Он управляет, как Великий Первосвященник.</div> <a href="/revelation" class="inline-block px-6 py-3 rounded-lg font-medium transition bg-[var(--color-text)] text-white hover:opacity-80 mt-12 text-center block"> 
+← Назад к списку
+ </a>  </main> <!-- ===== FOOTER ===== --> <footer class="text-center py-6 text-sm text-text-secondary dark:text-text-secondary">
+by ChurchLife Development
+</footer> <!-- ===== СКРИПТ: надёжная кнопка без багов ===== --> <script>
+      const setupReportButton = () => {
+        const btn = document.getElementById("report-error");
+        if (!btn) return;
+
+        // Клонируем элемент — сбрасываем все старые обработчики и состояния
+        const newBtn = btn.cloneNode(true);
+        btn.replaceWith(newBtn);
+
+        // Обработчик клика
+        newBtn.addEventListener("click", () => {
+          // Сбрасываем визуальное "зажатие" и фокус
+          newBtn.blur();
+          document.activeElement?.blur();
+
+          // Формируем письмо
+          const subject = "Ошибка в SpiritBase";
+          const body = `Опишите ошибку ниже:\n\n(Страница: ${window.location.href})`;
+          const mailto = `mailto:churchlife.development+spiritbase@gmail.com` +
+                        `?subject=${encodeURIComponent(subject)}` +
+                        `&body=${encodeURIComponent(body)}`;
+
+          // Открываем в новой вкладке — 100% без залипания
+          window.open(mailto, "_blank", "noopener,noreferrer");
+        });
+      };
+
+      // Выполняем при первой загрузке
+      setupReportButton();
+
+      // И при каждой навигации через Astro View Transitions
+      document.addEventListener("astro:page-load", setupReportButton);
+      document.addEventListener("astro:after-swap", setupReportButton);
+    </script> </body> </html>

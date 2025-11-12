@@ -1,0 +1,55 @@
+---
+import type { Post } from '../types';
+import Layout from '../layouts/Layout.astro';
+import { slugify } from '../utils/slugify';
+import Button from './Button.astro';
+
+const { title, posts, basePath } = Astro.props as {
+  title: string;
+  posts: Post[];
+  basePath: string; // например "revelation" или "ourway"
+};
+---
+
+<Layout title={`${title} — SpiritBase`}>
+  <section class="max-w-4xl mx-auto">
+    <h1 class="text-4xl font-semibold mb-8">{title}</h1>
+
+    <ul class="space-y-6">
+      {posts.map((post) => {
+        const slug = slugify(post.title);
+        const date = new Date(post.timestamp * 1000).toLocaleDateString('ru-RU');
+        return (
+          <li class="border border-border bg-(--color-surface) rounded-xl p-6 hover:shadow-sm transition">
+            <a href={`/${basePath}/${slug}`} class="block">
+              <h2 class="text-xl font-medium mb-2">{post.title}</h2>
+              <p class="text-text-secondary mb-3 line-clamp-3">{post.text.substring(0, 180)}...</p>
+              <time class="text-sm text-text-secondary">{date}</time>
+              {post.media && (
+                <img
+                  src={post.media}
+                  alt={post.title}
+                  class="mt-4 w-full h-48 object-contain rounded-lg"
+                  loading="lazy"
+                />
+              )}
+            </a>
+          </li>
+        );
+      })}
+    </ul>
+
+<Button href='/' class="mt-12 text-center block">
+    ← Назад к списку
+  </Button>
+  </section>
+
+  <style>
+    .line-clamp-3 {
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+  </style>
+</Layout>

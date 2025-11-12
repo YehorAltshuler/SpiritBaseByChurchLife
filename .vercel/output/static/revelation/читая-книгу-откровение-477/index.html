@@ -1,0 +1,44 @@
+<!DOCTYPE html><html lang="ru"> <head><meta charset="utf-8"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta name="viewport" content="width=device-width"><meta name="description" content="SpiritBase — база знаний по духовному наследию."><title>Читая книгу Откровение (477) — SpiritBase</title><meta name="astro-view-transitions-enabled" content="true"><meta name="astro-view-transitions-fallback" content="animate"><script type="module" src="/_astro/ClientRouter.astro_astro_type_script_index_0_lang.elfUsALL.js"></script><link rel="stylesheet" href="/_astro/index.CGVC5zg3.css"></head> <body class="min-h-screen flex flex-col transition-colors duration-300"> <!-- ===== HEADER ===== --> <header class="backdrop-blur bg-surface/80 dark:bg-surface/80 border-b border-border dark:border-border-dark sticky top-0 z-50"> <nav class="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center"> <a href="/" class="font-serif text-2xl text-accent hover:opacity-80 transition-opacity">
+SpiritBase
+</a> <div class="flex items-center gap-4"> <a href="/about" class="inline-block text-sm font-medium px-4 py-2 rounded-lg border border-border bg-(--color-text) text-white hover:opacity-80 transition-opacity">
+О проекте
+</a> <!-- КНОПКА "СООБЩИТЬ ОБ ОШИБКЕ" — идеальная версия --> <button id="report-error" type="button" class="inline-block text-sm font-medium px-4 py-2 rounded-lg border border-border text-(--color-text) hover:bg-(--color-text)/10 transition-colors cursor-pointer focus:outline-none focus:ring-2 focus:ring-accent/50">
+Сообщить об ошибке
+</button> </div> </nav> </header> <!-- ===== MAIN CONTENT ===== --> <main class="grow max-w-5xl mx-auto px-6 py-12">  <header class="mb-8 text-center"> <h1 class="text-3xl font-medium mb-2">Читая книгу Откровение (477)</h1> <time class="text-sm text-text-secondary">08.10.2020</time> </header> <img src="/media/Fotoizhroniki_1500168346918766/2891659051103015.jpg" alt="Читая книгу Откровение (477)" class="my-6 w-full rounded-lg" loading="lazy"><div class="leading-relaxed text-text-secondary dark:text-text-secondary">Читая Книгу Откровение<br><br>(477) Молитва о передачи Царской Власти «Сына» к «побеждающему»<br><br>Прочитаем сокращенный вариант Откр. 2:26-27 : «Кто побеждает и соблюдает дела Мои до конца, тому дам власть… как и Я получил власть от Отца Моего». <br>Это – обещание Иисуса Христа, что Заветную Власть (476) он частично (474) передаст каждому верному христианину(468), чтобы он использовал ее в Поместном Духовном Пробуждении (469). Оно непосредственно связано с молитвой Иисуса Христа на кануне Его Голгофских Страданий: «Отче!... Я прославил Тебя на земле, совершил дело, которое Ты поручил Мне исполнить… Я уже не в мире, но они в мире, а Я к Тебе иду. Отче Святый! соблюди их во имя Твое, тех, которых Ты Мне дал, чтобы они были едино, как и Мы… Не молю, чтобы Ты взял их из мира, но чтобы сохранил их от зла. Они не от мира, как и Я не от мира… И славу, которую Ты дал Мне, Я дал им: да будут едино, как Мы едино. Я в них, и Ты во Мне; да будут совершены воедино, и да познает мир, что Ты послал Меня и возлюбил их, как возлюбил Меня» (Ин. 17:4, 11, 15-16, 22-23). <br><br>По существу, так Иисус Христос включил верных христиан в Завет, заключенный между Ним и «Отцом». И, поэтому, Он  может «официально» наделять Своей Царской Властью христиан (которую Он получил во время Небесной Коронации), чтобы они использовали ее во время Местного Духовного Пробуждения для распространения Его Царства.</div> <a href="/revelation" class="inline-block px-6 py-3 rounded-lg font-medium transition bg-[var(--color-text)] text-white hover:opacity-80 mt-12 text-center block"> 
+← Назад к списку
+ </a>  </main> <!-- ===== FOOTER ===== --> <footer class="text-center py-6 text-sm text-text-secondary dark:text-text-secondary">
+by ChurchLife Development
+</footer> <!-- ===== СКРИПТ: надёжная кнопка без багов ===== --> <script>
+      const setupReportButton = () => {
+        const btn = document.getElementById("report-error");
+        if (!btn) return;
+
+        // Клонируем элемент — сбрасываем все старые обработчики и состояния
+        const newBtn = btn.cloneNode(true);
+        btn.replaceWith(newBtn);
+
+        // Обработчик клика
+        newBtn.addEventListener("click", () => {
+          // Сбрасываем визуальное "зажатие" и фокус
+          newBtn.blur();
+          document.activeElement?.blur();
+
+          // Формируем письмо
+          const subject = "Ошибка в SpiritBase";
+          const body = `Опишите ошибку ниже:\n\n(Страница: ${window.location.href})`;
+          const mailto = `mailto:churchlife.development+spiritbase@gmail.com` +
+                        `?subject=${encodeURIComponent(subject)}` +
+                        `&body=${encodeURIComponent(body)}`;
+
+          // Открываем в новой вкладке — 100% без залипания
+          window.open(mailto, "_blank", "noopener,noreferrer");
+        });
+      };
+
+      // Выполняем при первой загрузке
+      setupReportButton();
+
+      // И при каждой навигации через Astro View Transitions
+      document.addEventListener("astro:page-load", setupReportButton);
+      document.addEventListener("astro:after-swap", setupReportButton);
+    </script> </body> </html>

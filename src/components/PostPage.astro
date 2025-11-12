@@ -1,0 +1,32 @@
+---
+import Layout from '../layouts/Layout.astro';
+import type { Post } from '../types';
+import Button from './Button.astro';
+
+const { post, backLink = '/' } = Astro.props as { 
+  post: Post;
+  backLink?: string;  
+};
+
+const date = new Date(post.timestamp * 1000).toLocaleDateString('ru-RU');
+---
+
+<Layout title={`${post.title} — SpiritBase`}>
+  <header class="mb-8 text-center">
+    <h1 class="text-3xl font-medium mb-2">{post.title}</h1>
+    <time class="text-sm text-text-secondary">{date}</time>
+  </header>
+
+  {post.media && (
+    <img src={post.media} alt={post.title} class="my-6 w-full rounded-lg" loading="lazy" />
+  )}
+
+  <div
+    class="leading-relaxed text-text-secondary dark:text-text-secondary"
+    set:html={post.text.replace(/\n/g, '<br>')}
+  />
+
+  <Button href={backLink} class="mt-12 text-center block">
+    ← Назад к списку
+  </Button>
+</Layout>

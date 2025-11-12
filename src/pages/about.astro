@@ -1,4 +1,5 @@
 ---
+import Button from '../components/Button.astro';
 import Layout from '../layouts/Layout.astro';
 ---
 
@@ -46,10 +47,10 @@ import Layout from '../layouts/Layout.astro';
 
     <h3 class="text-lg font-medium mb-3 text-(--color-text)">Труды и наследие</h3>
     <p class="leading-relaxed mb-4 text-text-secondary dark:text-text-secondary">
-      В своей работе Гриненко сочетает исторический, теологический и практический подходы, помогая верующим глубже понять библейские истины. Он автор ряда образовательных пособий для воскресных школ и самостоятельного изучения Писания, включая серию «Десять Заповедей» (в соавторстве с о. В. Засадык) и рабочие тетради по основам библейского знания. Его проповеди, доступные на YouTube, охватывают темы духовного роста, праведной жизни и божественного откровения, вдохновляя тысячи слушателей на более глубокое общение с Богом.
+      В своей работе Гриненко сочетает исторический, теологический и практический подходы, помогая верующим глубже понять библейские истины. Он автор ряда образовательных пособий для воскресных школ и самостоятельного изучения Писания. Его проповеди, доступные на YouTube, охватывают темы духовного роста, праведной жизни и божественного откровения, вдохновляя тысячи слушателей на более глубокое общение с Богом.
     </p>
     <p class="leading-relaxed mb-4 text-text-secondary dark:text-text-secondary">
-      Сейчас, будучи женатым и проживая в Киеве, он трудится над переводом всей Библии, продолжая многолетнее служение Церкви через свои труды.
+      Сейчас он трудится над переводом всей Библии, продолжая многолетнее служение Церкви через свои труды.
     </p>
     <p class="leading-relaxed text-text-secondary dark:text-text-secondary">
       Наследие Игоря Гриненко продолжает влиять на современное богословие, подчёркивая единство Библии как живого Слова Божьего. SpiritBase собирает всё это наследие в одном месте - проповеди, лекции, статьи по библейским языкам, пособия и материалы по душепопечительству, - делая его доступным для тех, кто стремится к зрелой, живой вере и осмысленному познанию Слова Божьего.
@@ -110,7 +111,7 @@ import Layout from '../layouts/Layout.astro';
       class="p-4 rounded-lg border border-border bg-(--color-surface) dark:bg-(--color-surface) md:col-span-2 lg:col-span-3 flex flex-col"
     >
       <h3 class="font-medium mb-2 text-center">Facebook: Профили</h3>
-      <p class="text-sm mb-2 text-text-secondary dark:text-text-secondary flex-grow text-center">
+      <p class="text-sm mb-2 text-text-secondary dark:text-text-secondary grow text-center">
         Обсуждения и дополнительные материалы
       </p>
       <div class="mt-auto flex flex-wrap gap-2 justify-center">
@@ -138,8 +139,8 @@ import Layout from '../layouts/Layout.astro';
         <div
           class="p-6 rounded-lg text-center border border-border bg-(--color-surface) dark:bg-(--color-surface)"
         >
-          <h3 class="font-medium mb-2">Поиск</h3>
-          <p class="text-text-secondary dark:text-text-secondary">
+          <h3 class="font-medium mb-2 text-center">Поиск</h3>
+          <p class="text-sm mb-2 text-text-secondary dark:text-text-secondary grow text-center">
             Введите ключевые слова - система Pagefind найдёт релевантные материалы по смыслу и контексту.
           </p>
         </div>
@@ -147,8 +148,8 @@ import Layout from '../layouts/Layout.astro';
         <div
           class="p-6 rounded-lg text-center border border-border bg-(--color-surface) dark:bg-(--color-surface)"
         >
-          <h3 class="font-medium mb-2">Каталог</h3>
-          <p class="text-text-secondary dark:text-text-secondary">
+          <h3 class="font-medium mb-2 text-center">Каталог</h3>
+          <p class="text-sm mb-2 text-text-secondary dark:text-text-secondary grow text-center">
             Просматривайте контент по темам с удобной пагинацией для систематического изучения.
           </p>
         </div>
@@ -156,8 +157,8 @@ import Layout from '../layouts/Layout.astro';
         <div
           class="p-6 rounded-lg text-center border border-border bg-(--color-surface) dark:bg-(--color-surface)"
         >
-          <h3 class="font-medium mb-2">Цитирование</h3>
-          <p class="text-text-secondary dark:text-text-secondary">
+          <h3 class="font-medium mb-2 text-center">Цитирование</h3>
+          <p class="text-sm mb-2 text-text-secondary dark:text-text-secondary grow text-center">
             Каждый материал оснащён метаданными: дата публикации, заголовок, авторство.
           </p>
         </div>
@@ -171,13 +172,8 @@ import Layout from '../layouts/Layout.astro';
       </p>
     </section>
 
-    <div class="text-center mt-12">
-     <a
-  href="/"
-  class="inline-block font-medium px-6 py-3 rounded-lg border border-border bg-(--color-text) text-white hover:opacity-80 transition-colors"
->
-  ← Вернуться на главную
-</a>
-    </div>
+    <Button href='/' class="mt-12 text-center block">
+    ← Вернуться на главную
+  </Button>
   </div>
 </Layout>
