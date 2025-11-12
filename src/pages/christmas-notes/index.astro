@@ -1,0 +1,10 @@
+---
+import PostList from '../../components/PostList.astro';
+import posts from '../../data/christmas_notes_posts.json' assert { type: 'json' };
+---
+
+<PostList
+  title="Рождественские заметки"
+  posts={posts}
+  basePath="christmas-notes"
+/>
