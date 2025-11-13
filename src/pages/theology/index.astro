@@ -1,0 +1,10 @@
+---
+import PostList from '../../components/PostList.astro';
+import posts from '../../data/theology_posts.json' assert { type: 'json' };
+---
+
+<PostList
+  title="Теология"
+  posts={posts}
+  basePath="theology"
+/>
