@@ -1,5 +1,6 @@
 ---
 import { ClientRouter } from 'astro:transitions';
+import { SimpleAnalytics } from 'astro-simpleanalytics-plugin';
 import '../styles/global.css';
 
 const { title = 'SpiritBase' } = Astro.props;
@@ -14,14 +15,12 @@ const { title = 'SpiritBase' } = Astro.props;
     <title>{title}</title>
     <ClientRouter />
 
-    <!-- Alpine.js для мобильного меню (CDN) -->
+    <!-- Alpine.js для мобильного меню -->
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
   </head>
 
   <body class="min-h-screen flex flex-col transition-colors duration-300">
-    <!-- Обёртка для сайдбара и основного контента -->
     <div x-data="{ open: false }" class="flex flex-col h-screen">
-      <!-- Overlay при открытом меню -->
       <div
         x-show="open"
         x-transition.opacity
@@ -29,7 +28,6 @@ const { title = 'SpiritBase' } = Astro.props;
         class="fixed inset-0 bg-black/50 z-40 md:hidden"
       ></div>
 
-      <!-- Боковое меню -->
       <aside
         x-show="open"
         x-transition:enter="transition ease-out duration-300"
@@ -53,7 +51,7 @@ const { title = 'SpiritBase' } = Astro.props;
             <a
               href="mailto:churchlife.development+spiritbase@gmail.com?subject=Ошибка%20в%20SpiritBase&body=На%20какой%20странице%20ошибка%20(можете%20вставить%20ссылку):%0A%0AОпишите%20проблему:%0A%0A"
               @click="open = false"
-              class="block text-sm font-medium px-4 py-2 rounded-lg border border-border  bg-surface text-foreground hover:bg-accent/10 transition-colors"
+              class="block text-sm font-medium px-4 py-2 rounded-lg border border-border bg-surface text-foreground hover:bg-accent/10 transition-colors"
             >
               Сообщить об ошибке
             </a>
@@ -61,14 +59,11 @@ const { title = 'SpiritBase' } = Astro.props;
         </div>
       </aside>
 
-      <!-- Основной контент -->
       <div class="flex-1 flex flex-col">
         <header class="backdrop-blur bg-surface/80 dark:bg-surface/80 border-b border-border dark:border-border-dark sticky top-0 z-30">
           <nav class="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
-            <!-- Логотип -->
             <a href="/" class="font-serif text-2xl text-accent">SpiritBase</a>
 
-            <!-- Кнопки на десктопе -->
             <div class="hidden md:flex items-center gap-4">
               <a
                 href="/about"
@@ -84,7 +79,6 @@ const { title = 'SpiritBase' } = Astro.props;
               </a>
             </div>
 
-            <!-- Гамбургер на мобильных -->
             <button
               @click="open = !open"
               class="md:hidden p-2 rounded-lg hover:bg-accent/10 transition-colors"
@@ -121,8 +115,8 @@ const { title = 'SpiritBase' } = Astro.props;
         </footer>
       </div>
     </div>
-    <!-- 100% privacy-first analytics -->
-    <script async src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
-    <noscript><img src="https://queue.simpleanalyticscdn.com/noscript.gif" alt="" referrerpolicy="no-referrer-when-downgrade"/></noscript>
+
+    <!-- Simple Analytics подключение -->
+    <SimpleAnalytics/>
   </body>
 </html>
