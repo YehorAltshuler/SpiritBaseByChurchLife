@@ -1,14 +1,17 @@
 ---
+// Твой текущий компонент (Post.astro или как он называется)
 import Layout from '../layouts/Layout.astro';
 import type { Post } from '../types';
 import Button from './Button.astro';
+import ImageCarousel from './Carousel.astro'; // Новый импорт
 
-const { post, backLink = '/' } = Astro.props as { 
-  post: Post;
-  backLink?: string;  
-};
-
+const { post, backLink = '/' } = Astro.props as { post: Post; backLink?: string; };
 const date = new Date(post.timestamp * 1000).toLocaleDateString('ru-RU');
+
+// Разбор изображений (без изменений)
+const mediaItems = post.media 
+  ? post.media.split(',').map((m) => m.trim()).filter(Boolean) 
+  : [];
 ---
 
 <Layout title={`${post.title} — SpiritBase`}>
@@ -17,12 +20,13 @@ const date = new Date(post.timestamp * 1000).toLocaleDateString('ru-RU');
     <time class="text-sm text-text-secondary">{date}</time>
   </header>
 
-  {post.media && (
-    <img src={post.media} alt={post.title} class="my-6 w-full rounded-lg" loading="lazy" />
+  <!-- Карусель с навигацией + пагинацией -->
+  {mediaItems.length > 0 && (
+    <ImageCarousel images={mediaItems} title={post.title} />
   )}
 
-  <div
-    class="leading-relaxed text-text-secondary dark:text-text-secondary"
+  <div 
+    class="leading-relaxed text-text-secondary dark:text-text-secondary mt-8"
     set:html={post.text.replace(/\n/g, '<br>')}
   />
 

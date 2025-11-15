@@ -7,8 +7,14 @@ import Button from './Button.astro';
 const { title, posts, basePath } = Astro.props as {
   title: string;
   posts: Post[];
-  basePath: string; // например "revelation" или "ourway"
+  basePath: string;
 };
+
+// Функция для получения первого изображения
+const getFirstMedia = (media?: string) =>
+  media
+    ? media.split(',').map((m) => m.trim()).filter(Boolean)[0]
+    : null;
 ---
 
 <Layout title={`${title} — SpiritBase`}>
@@ -19,15 +25,22 @@ const { title, posts, basePath } = Astro.props as {
       {posts.map((post) => {
         const slug = slugify(post.title);
         const date = new Date(post.timestamp * 1000).toLocaleDateString('ru-RU');
+        const firstImage = getFirstMedia(post.media);
+
         return (
           <li class="border border-border bg-(--color-surface) rounded-xl p-6 hover:shadow-sm transition">
             <a href={`/${basePath}/${slug}`} class="block">
               <h2 class="text-xl font-medium mb-2">{post.title}</h2>
-              <p class="text-text-secondary mb-3 line-clamp-3">{post.text.substring(0, 180)}...</p>
+
+              <p class="text-text-secondary mb-3 line-clamp-3">
+                {post.text.substring(0, 180)}...
+              </p>
+
               <time class="text-sm text-text-secondary">{date}</time>
-              {post.media && (
+
+              {firstImage && (
                 <img
-                  src={post.media}
+                  src={firstImage}
                   alt={post.title}
                   class="mt-4 w-full h-48 object-contain rounded-lg"
                   loading="lazy"
@@ -39,9 +52,9 @@ const { title, posts, basePath } = Astro.props as {
       })}
     </ul>
 
-<Button href='/' class="mt-12 text-center block">
-    ← Назад
-  </Button>
+    <Button href="/" class="mt-12 text-center block">
+      ← Назад
+    </Button>
   </section>
 
   <style>

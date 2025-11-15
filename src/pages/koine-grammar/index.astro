@@ -1,0 +1,10 @@
+---
+import PostList from '../../components/PostList.astro';
+import posts from '../../data/koine_grammar_posts.json' assert { type: 'json' };
+---
+
+<PostList
+  title="Грамматика Койне Нового Завета"
+  posts={posts}
+  basePath="koine-grammar"
+/>
