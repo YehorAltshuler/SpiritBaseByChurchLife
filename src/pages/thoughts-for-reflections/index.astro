@@ -1,0 +1,10 @@
+---
+import PostList from '../../components/PostList.astro';
+import posts from '../../data/thoughts_for_reflectings_posts.json' assert { type: 'json' };
+---
+
+<PostList
+  title="Мысли для размышлений"
+  posts={posts}
+  basePath="thoughts-for-reflections"
+/>
