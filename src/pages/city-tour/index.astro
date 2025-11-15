@@ -1,0 +1,10 @@
+---
+import PostList from '../../components/PostList.astro';
+import posts from '../../data/city_tour_posts.json' assert { type: 'json' };
+---
+
+<PostList
+  title="Богословский сценарий «Путешествие по Городу»"
+  posts={posts}
+  basePath="city-tour"
+/>
