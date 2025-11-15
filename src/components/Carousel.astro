@@ -24,23 +24,28 @@ const astroSwiperOptions: AstroSwiperType = {
 ---
 
 <div class="my-8 w-full max-w-full overflow-hidden">
-  <Swiper {...astroSwiperOptions} class="w-full max-w-full">
-    <SwiperWrapper class="w-full max-w-full">
-      {images.map((src, index) => (
-        <SwiperSlide class="w-full max-w-full">
-          <img
-            src={src}
-            alt={`${title} — изображение ${index + 1}`}
-            class="w-full h-auto object-contain rounded-lg"
-            loading="lazy"
-          />
-        </SwiperSlide>
-      ))}
-    </SwiperWrapper>
+  <Swiper {...astroSwiperOptions}>
+  <SwiperWrapper class="w-full max-w-full">
+    {images.map((src, index) => (
+      <SwiperSlide class="w-full max-w-full">
+        <img
+          src={src}
+          alt={`${title} — изображение ${index + 1}`}
+          class="w-full h-auto object-contain rounded-lg"
+          loading="lazy"
+        />
+      </SwiperSlide>
+    ))}
+  </SwiperWrapper>
 
-    <SwiperButtonPrev class="swiper-button-prev" />
-    <SwiperButtonNext class="swiper-button-next" />
-  </Swiper>
+  {images.length > 1 && (
+    <>
+      <SwiperButtonPrev class="swiper-button-prev" />
+      <SwiperButtonNext class="swiper-button-next" />
+    </>
+  )}
+</Swiper>
+
 </div>
 
 
