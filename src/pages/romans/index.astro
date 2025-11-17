@@ -1,0 +1,10 @@
+---
+import PostList from '../../components/PostList.astro';
+import posts from '../../data/romans_posts.json' assert { type: 'json' };
+---
+
+<PostList
+  title="Послание к Римлянам"
+  posts={posts}
+  basePath="romans"
+/>

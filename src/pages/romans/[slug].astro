@@ -1,0 +1,18 @@
+---
+import { slugify } from '../../utils/slugify';
+import PostPage from '../../components/PostPage.astro';
+import posts from '../../data/romans_posts.json' assert { type: 'json' };
+import type { Post } from '../../types';
+
+export async function getStaticPaths() {
+  return (posts as Post[]).map((post) => ({
+    params: { slug: slugify(post.title) },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+if (!post) return Astro.redirect('/404');
+---
+
+<PostPage post={post} backLink="/romans"/>
