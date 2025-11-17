@@ -1,0 +1,10 @@
+---
+import PostList from '../../components/PostList.astro';
+import posts from '../../data/life_as_it_is_posts.json' assert { type: 'json' };
+---
+
+<PostList
+  title="Жизнь, как она есть"
+  posts={posts}
+  basePath="life-as-it-is"
+/>
