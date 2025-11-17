@@ -1,0 +1,10 @@
+---
+import PostList from '../../components/PostList.astro';
+import posts from '../../data/life_stories_posts.json' assert { type: 'json' };
+---
+
+<PostList
+  title="Житейские истории"
+  posts={posts}
+  basePath="life-stories"
+/>
